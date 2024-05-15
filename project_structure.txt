@@ -1,0 +1,21 @@
+.
+├── electronics_network
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── network
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── poetry.lock
+├── project_structure.txt
+├── pyproject.toml
+└── templates
+
+4 directories, 15 files
