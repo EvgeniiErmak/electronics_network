@@ -1,0 +1,41 @@
+<!-- templates/network/index.html -->
+{% extends "network/base.html" %}
+
+{% block content %}
+<h1>Network Nodes</h1>
+<form method="get" action="">
+    <div class="form-group">
+        <label for="city">Filter by city:</label>
+        <input type="text" class="form-control" id="city" name="city" value="{{ request.GET.city }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>House Number</th>
+            <th>Debt</th>
+            <th>Created At</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for node in nodes %}
+        <tr>
+            <td>{{ node.name }}</td>
+            <td>{{ node.email }}</td>
+            <td>{{ node.country }}</td>
+            <td>{{ node.city }}</td>
+            <td>{{ node.street }}</td>
+            <td>{{ node.house_number }}</td>
+            <td>{{ node.debt }}</td>
+            <td>{{ node.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

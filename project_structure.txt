@@ -11,11 +11,18 @@
 │   ├── admin.py
 │   ├── apps.py
 │   ├── models.py
+│   ├── permissions.py
+│   ├── serializers.py
+│   ├── templates
+│   │   └── network
+│   │       ├── base.html
+│   │       └── index.html
 │   ├── tests.py
+│   ├── urls.py
 │   └── views.py
 ├── poetry.lock
 ├── project_structure.txt
 ├── pyproject.toml
 └── templates
 
-4 directories, 15 files
+6 directories, 20 files
