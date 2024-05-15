@@ -4,6 +4,7 @@ from django.contrib import admin
 from .models import CustomUser, NetworkNode
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
+from django.utils.html import format_html
 
 
 @admin.register(CustomUser)
@@ -31,10 +32,16 @@ def clear_debt(modeladmin, request, queryset):
 
 
 class NetworkNodeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'country', 'city', 'street', 'house_number', 'debt', 'created_at')
+    list_display = ('name', 'email', 'country', 'city', 'street', 'house_number', 'debt', 'supplier_link', 'created_at')
     list_filter = ('city',)
     search_fields = ('name',)
     actions = [clear_debt]
+
+    def supplier_link(self, obj):
+        if obj.supplier:
+            return format_html('<a href="/admin/network/networknode/{}/change/">{}</a>', obj.supplier.id, obj.supplier.name)
+        return '-'
+    supplier_link.short_description = 'Поставщик'
 
 
 admin.site.register(NetworkNode, NetworkNodeAdmin)
