@@ -13,10 +13,6 @@
 │   ├── models.py
 │   ├── permissions.py
 │   ├── serializers.py
-│   ├── templates
-│   │   └── network
-│   │       ├── base.html
-│   │       └── index.html
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
@@ -24,5 +20,8 @@
 ├── project_structure.txt
 ├── pyproject.toml
 └── templates
+    └── network
+        ├── base.html
+        └── index.html
 
-6 directories, 20 files
+5 directories, 20 files

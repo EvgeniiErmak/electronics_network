@@ -15,6 +15,17 @@ files = [
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
+name = "decorator"
+version = "5.1.1"
+description = "Decorators for Humans"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "decorator-5.1.1-py3-none-any.whl", hash = "sha256:b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"},
+    {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
+]
+
+[[package]]
 name = "django"
 version = "5.0.6"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -130,6 +141,19 @@ files = [
 ]
 
 [[package]]
+name = "self"
+version = "2020.12.3"
+description = "@self decorator makes method return self (jQuery-like chaining)"
+optional = false
+python-versions = "*"
+files = [
+    {file = "self-2020.12.3.tar.gz", hash = "sha256:a0c408138257e0ba6188f2a7ad80cb3f61c3e48c3f85d1f973a160f6f887dc53"},
+]
+
+[package.dependencies]
+decorator = "*"
+
+[[package]]
 name = "sqlparse"
 version = "0.5.0"
 description = "A non-validating SQL parser."
@@ -158,4 +182,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "a842d8bc9fa296e205d51479825910636f6942605b1611c77e14b4a8238ee460"
+content-hash = "56438ea1742a47b7a16d21122d1eb863a3c4a6b5a5461cf530acdabbd6b8e4e6"

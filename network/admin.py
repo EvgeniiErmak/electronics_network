@@ -3,16 +3,16 @@
 from django.contrib import admin
 from .models import CustomUser, NetworkNode
 from django.contrib.auth.admin import UserAdmin
-from django.utils.translation import gettext, gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
-        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions', 'is_active_employee')}),
-        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+        (_('Персональная информация'), {'fields': ('first_name', 'last_name', 'email')}),
+        (_('Разрешения'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions', 'is_active_employee')}),
+        (_('Важные даты'), {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
         (None, {
@@ -25,7 +25,7 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('username',)
 
 
-@admin.action(description='Clear debt for selected nodes')
+@admin.action(description='Очистить задолженность у выбранных узлов')
 def clear_debt(modeladmin, request, queryset):
     queryset.update(debt=0.00)
 

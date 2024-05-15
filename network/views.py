@@ -1,6 +1,7 @@
 # network/views.py
 
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from .serializers import NetworkNodeSerializer
 from .permissions import IsActiveEmployee
 from rest_framework.filters import SearchFilter

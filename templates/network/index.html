@@ -2,25 +2,25 @@
 {% extends "network/base.html" %}
 
 {% block content %}
-<h1>Network Nodes</h1>
+<h1>Узлы сети</h1>
 <form method="get" action="">
     <div class="form-group">
-        <label for="city">Filter by city:</label>
+        <label for="city">Фильтр по городу:</label>
         <input type="text" class="form-control" id="city" name="city" value="{{ request.GET.city }}">
     </div>
-    <button type="submit" class="btn btn-primary">Filter</button>
+    <button type="submit" class="btn btn-primary">Фильтровать</button>
 </form>
 <table class="table mt-4">
     <thead>
         <tr>
-            <th>Name</th>
+            <th>Название</th>
             <th>Email</th>
-            <th>Country</th>
-            <th>City</th>
-            <th>Street</th>
-            <th>House Number</th>
-            <th>Debt</th>
-            <th>Created At</th>
+            <th>Страна</th>
+            <th>Город</th>
+            <th>Улица</th>
+            <th>Номер дома</th>
+            <th>Задолженность</th>
+            <th>Дата создания</th>
         </tr>
     </thead>
     <tbody>
