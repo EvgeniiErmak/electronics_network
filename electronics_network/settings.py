@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'network.apps.NetworkConfig',
     'rest_framework',
-    'network',
 ]
 
 MIDDLEWARE = [
