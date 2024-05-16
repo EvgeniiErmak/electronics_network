@@ -25,7 +25,7 @@ class NetworkNode(models.Model):
     product_model = models.CharField(_('Модель продукта'), max_length=255)
     product_release_date = models.DateField(_('Дата выхода продукта на рынок'))
     supplier = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, verbose_name=_('Поставщик'))
-    debt = models.DecimalField(_('Задолженность'), max_digits=10, decimal_places=2)
+    debt = models.DecimalField(_('Задолженность'), max_digits=10, decimal_places=2, default=0.00)
     created_at = models.DateTimeField(_('Дата создания'), auto_now_add=True)
 
     class Meta:

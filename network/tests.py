@@ -8,6 +8,7 @@ from .models import NetworkNode
 
 User = get_user_model()
 
+
 class NetworkNodeAPITest(TestCase):
     def setUp(self):
         self.client = APIClient()
@@ -39,12 +40,14 @@ class NetworkNodeAPITest(TestCase):
             'product_model': 'Model Y',
             'product_release_date': '2024-01-01',
             'supplier': self.supplier.id,
-            'debt': 50.00  # Убедимся, что значение debt передается в запросе
+            'debt': 50.00
         }
         response = self.client.post('/api/nodes/', data, format='json')
+        print(response.data)  # Отладочная информация
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(NetworkNode.objects.count(), 2)
-        self.assertEqual(NetworkNode.objects.get(id=2).name, 'Retail Network')
+        created_node = NetworkNode.objects.get(email='retail@example.com')  # Получение объекта по другому уникальному параметру
+        self.assertEqual(created_node.name, 'Retail Network')
 
     def test_filter_network_nodes_by_country(self):
         response = self.client.get('/api/nodes/?search=USA')
