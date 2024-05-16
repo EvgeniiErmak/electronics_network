@@ -1,4 +1,3 @@
-```markdown
 # Electronics Network
 
 ## Описание
@@ -156,4 +155,3 @@ electronics_network
 - Telegram: [@DJErmak3000]
 - E-mail: [ew.ermak5000@mail.ru]
 - GitHub: [https://github.com/EvgeniiErmak]
-```
