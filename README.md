@@ -150,8 +150,9 @@ electronics_network
 
 Если у вас есть вопросы или предложения, вы можете связаться с автором проекта:
 
-- Имя: [Евгений Ермак]
-- Телефон: [+7 930-290-99-80]
-- Telegram: [@DJErmak3000]
-- E-mail: [ew.ermak5000@mail.ru]
-- GitHub: [https://github.com/EvgeniiErmak]
+- Имя: Евгений Ермак
+- Телефон: +7 930-290-99-80
+- Telegram: @DJErmak3000
+- E-mail: ew.ermak5000@mail.ru
+- GitHub: https://github.com/EvgeniiErmak
+
