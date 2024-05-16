@@ -140,3 +140,6 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'network.CustomUser'
+
+# URL для перенаправления на страницу входа
+LOGIN_URL = '/login/'
