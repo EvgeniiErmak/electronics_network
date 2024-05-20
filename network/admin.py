@@ -1,10 +1,10 @@
 # network/admin.py
 
-from django.contrib import admin
-from .models import CustomUser, NetworkNode
-from django.contrib.auth.admin import UserAdmin
+from .models import CustomUser, NetworkNode, Contact, Product
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.admin import UserAdmin
 from django.utils.html import format_html
+from django.contrib import admin
 
 
 @admin.register(CustomUser)
@@ -26,14 +26,26 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('username',)
 
 
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('email', 'country', 'city', 'street', 'house_number')
+    search_fields = ('country', 'city')
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'model', 'release_date')
+    search_fields = ('name', 'model')
+
+
 @admin.action(description='Очистить задолженность у выбранных узлов')
 def clear_debt(modeladmin, request, queryset):
     queryset.update(debt=0.00)
 
 
 class NetworkNodeAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'country', 'city', 'street', 'house_number', 'debt', 'supplier_link', 'created_at')
-    list_filter = ('city',)
+    list_display = ('name', 'contact', 'debt', 'supplier_link', 'created_at')
+    list_filter = ('contact__city',)
     search_fields = ('name',)
     actions = [clear_debt]
 

@@ -22,7 +22,7 @@ def add_node(request):
 def index(request):
     city = request.GET.get('city', '')
     if city:
-        nodes = NetworkNode.objects.filter(city__icontains=city)
+        nodes = NetworkNode.objects.filter(contact__city__icontains=city)
     else:
         nodes = NetworkNode.objects.all()
     return render(request, 'network/index.html', {'nodes': nodes})
@@ -33,7 +33,7 @@ class NetworkNodeViewSet(viewsets.ModelViewSet):
     serializer_class = NetworkNodeSerializer
     permission_classes = [IsActiveEmployee]
     filter_backends = [SearchFilter]
-    search_fields = ['country']
+    search_fields = ['contact__country']
 
 
 class SupplierViewSet(viewsets.ModelViewSet):
@@ -41,4 +41,4 @@ class SupplierViewSet(viewsets.ModelViewSet):
     serializer_class = SupplierSerializer
     permission_classes = [IsActiveEmployee]
     filter_backends = [SearchFilter]
-    search_fields = ['country']
+    search_fields = ['contact__country']
